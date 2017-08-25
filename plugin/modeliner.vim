@@ -1,3 +1,4 @@
+" vim: set et fdm=marker fenc=utf-8 ff=unix sts=4 sw=4 ts=4 : 
 " Modeliner
 "
 " Version: 0.3.0
@@ -119,7 +120,7 @@ function! s:Modeliner_execute()
     else
         "modeline NOT found -> append new modeline
         " todo add setting to use append instead
-        call insert('.', modeline)
+        call append(0, modeline)
     endif
 
 endfunction
@@ -224,4 +225,3 @@ function! s:ExtractOptionStringFromModeline(text)
     return info
 endfunction
 
-" vim: set et fenc=utf-8 ff=unix sts=4 sw=4 ts=4 : 
