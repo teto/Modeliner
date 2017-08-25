@@ -18,7 +18,7 @@
 "   If you want to customize option, modify g:Modeliner_format.
 
 if !exists('g:Modeliner_format')
-    let g:Modeliner_format = 'et ff= fenc= sts= sw= ts='
+    let g:Modeliner_format = 'et ff= fenc= sts= sw= ts= fdm='
     " /[ ,:]/ delimited.
     "
     " if the type of a option is NOT 'boolean' (see :help 'option-name'),
@@ -88,7 +88,7 @@ function! s:Modeliner_execute()
     endif
 
 
-    " insert new modeline 
+    " insert new modeline
     if info.lineNum != 0
         "modeline FOUND -> replace the modeline
 
@@ -118,7 +118,8 @@ function! s:Modeliner_execute()
         call cursor(orgLine, orgCol)
     else
         "modeline NOT found -> append new modeline
-        call append('.', modeline)
+        " todo add setting to use append instead
+        call insert('.', modeline)
     endif
 
 endfunction
